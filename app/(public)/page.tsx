@@ -1,15 +1,15 @@
-import Header from '@/components/home/Hero'
-
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
+import HomeFeed from '@/components/HomeFeed'
 
 export default function Home() {
   return (
     <>
       <Header />
-
-
-      iauehiuaheiuahehaiehiuaheiua
-      
-      
+      <main className="mt-[88px]">
+        <HomeFeed />
+      </main>
+      <Footer />
     </>
   )
 }

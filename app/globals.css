@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@400;500;600&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --vermelho: #ff385c;
+  --preto:    #0d0d0d;
+  --ouro:     #f59e0b;
+}
+
+body {
+  font-family: 'DM Sans', Arial, sans-serif;
+  background: #fafafa;
+  color: #3a3a3a;
+  min-height: 100vh;
+}
+
+/* Carrossel: esconde scrollbar */
+.scrollbar-hide { scrollbar-width: none; -ms-overflow-style: none; }
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+
+/* Card ultra: borda gradiente (não reproduzível só com Tailwind) */
+.card-ultra-border {
+  border: 2px solid transparent;
+  background:
+    linear-gradient(#fff, #fff) padding-box,
+    linear-gradient(135deg, #f0c040 0%, #ff385c 50%, #f0c040 100%) border-box;
+}
+
+/* Keyframes para componentes Tailwind */
+@keyframes bounce-dot { 0%,80%,100%{transform:scale(0)} 40%{transform:scale(1)} }
+@keyframes loadbar { to { width: 100%; } }
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(.8)} }
+@keyframes slideUp { from{opacity:0;transform:translate(-50%,12px)} to{opacity:1;transform:translate(-50%,0)} }
+
+/* Dashboard menu link — active state controlado por JS */
+.dash-menu-link:hover { background: #fff5f6; color: #ff385c !important; border-left-color: #ff385c !important; }
+.dash-menu-link.active { background: #fff5f6; color: #ff385c !important; border-left-color: #ff385c !important; font-weight: 600; }
+
+/* Flatpickr overrides */
+.flatpickr-calendar { font-family: 'DM Sans', Arial, sans-serif !important; border-radius: 16px !important; box-shadow: 0 12px 40px rgba(0,0,0,.15) !important; border: 1px solid #eee !important; }
+.flatpickr-day.selected, .flatpickr-day.startRange, .flatpickr-day.endRange { background: var(--vermelho) !important; border-color: var(--vermelho) !important; }
+.flatpickr-day.inRange { background: #ffe0e6 !important; border-color: #ffe0e6 !important; box-shadow: -5px 0 0 #ffe0e6, 5px 0 0 #ffe0e6 !important; color: #333 !important; }
+.flatpickr-day:hover { background: #ffe0e6 !important; }
